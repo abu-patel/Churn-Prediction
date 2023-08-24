@@ -19,6 +19,8 @@ Finally, by leveraging a recently proposed approach to training data set creatio
 This is really the heart of the project:
 
  ![Single Time Slice Technique](image.png)
+
+ Multi Slice shown below:
  ![Multiple Time Slice Tecnique](image-2.png)
 
  ## Advantages of Time Slicing 
@@ -29,4 +31,46 @@ This is really the heart of the project:
  - Increase the training size drastically. Depending on number of years of data at hand we have methodologies in place to determine the right number of training slices. This dramatically increase the training size leveraging as much data as possible
  - Missing Trend values are implicitly calculated by the model as the different training slices are a result from shift in time and therefore eliminates the need of explicitly calculating trends
 
+
+## 2X5 Nested CV Technique
+
+In order to maintain no data leakage between multiple training slices and test set we have developed a methodology that uses 2X5 nested cross validation where the inner loop tunes the hyper parameter along with a wrapper method for feature selection and the outer loop delivers performance metrics on the whole set. Personally, an achievement that we are very proud of is that only by using invoice data mainly we can come up with a set of 52 feature space that can be applied to literally any distributor and when integrated with the power of multi-slice approach and statistically sound machine learning techniques we can significantly bridge the gap between current limitations in non-contractual B2B setting.
+
+Please see the Markdown file for complete documentation on this:
+
+single CV 
+![CV](image-3.png)
+
+Multi Training set CV 
+![CV](image-4.png)
+
+## Feature Space 
+
+We developed 54 Feature from scratch and increased the training size significantly using Multi Time Slice Technique
+
+![Feature Space](image-5.png)
+
+## Feature Selection
+
+We used a wrapper method along with multiple other feature selection technique, however **Boruta Selection Method**  yielded fairly similar results : 
+
+![Baruta](image-6.png)
+
+## Results 
+
+ROC Curve of **0.82**:
+![ROC ](image-7.png)
+
+Confusion Matrix:
+![CF](image-8.png)
+
+- Over **1 Million Dollar Savings** for only a small to medium size distributor in a quarter
+- Established Strategies with Sales team to prevent customer that has higher probability of Churning 
+
+## Deployment 
+
+- First AI model to be deployed at this company 
+- Increased revenue by 4.2% in less than a year
+
+![Churn KPIS](image-9.png)
 

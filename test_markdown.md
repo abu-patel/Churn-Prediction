@@ -72,10 +72,15 @@ setting.
 
 ## Time Slicing Technique -
 
-![MultiSlice Methodology](image-10.png)
+![MultiSlice Visulaization](image.png)
 
 -----------------------------------------------------------------------------------------------------
-![MultiSlice Visulaization](image.png)
+-----------------------------------------------------------------------------------------------------
+
+![MultiSlice Methodology](image-10.png)
+
+
+
 
 **Advantages of MultiSlice Technique:**
 

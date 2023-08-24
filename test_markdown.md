@@ -74,6 +74,7 @@ setting.
 
 ![MultiSlice Methodology](image-10.png)
 
+-----------------------------------------------------------------------------------------------------
 ![MultiSlice Visulaization](image.png)
 
 **Advantages of MultiSlice Technique:**

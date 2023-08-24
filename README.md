@@ -11,11 +11,11 @@ Abu Patel
 
 Finally, by leveraging a recently proposed approach to training data set creation and comparing it with the approach used traditionally, we aim to evaluate whether it generalizes to different case data.
 
-# Churn Definition:
+## Churn Definition:
 
  Churn can be defined in multiple ways however the first step is the timeline to consider. Let’s say one is interested in predicting quarterly churn then churn at a customer level can be defined as customers who did not make any purchase in this quarter but did in previous quarter. Then this customer can be addressed with a value of 1(Churn) otherwise 0 or non-churn. Similarly, one can define churn yearly, monthly and at times even weekly depending on business needs. Our model is capable of handling churn at any time level, and this is only one of its robust capabilities
 
-# Multiple Time Slicing Technique:
+## Multiple Time Slicing Technique:
 This is really the heart of the project:
 
  ![Single Time Slice Technique](image.png)
@@ -74,3 +74,4 @@ Confusion Matrix:
 
 ![Churn KPIS](image-9.png)
 
+Note: Customer IDs and Company Name is hidden for confidential reasons

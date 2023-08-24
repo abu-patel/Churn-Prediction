@@ -72,10 +72,9 @@ setting.
 
 ## Time Slicing Technique -
 
-![MultiSlice Methodology  
-](images/Tme_Slice.png)
+![MultiSlice Methodology](image-10.png)
 
-![MultiSlice Visulaization](images/Picture2-TS.png)
+![MultiSlice Visulaization](image.png)
 
 **Advantages of MultiSlice Technique:**
 
@@ -178,9 +177,9 @@ Cj(t^train) are not overlapping. It is not straightforward how to ensure
 this when applying out-of-period testing since different observations of
 the same customers can appear in both training and testing time slice.
 
-![](images/paste-A0292DDA.png)
+![2X5 CV](image-11.png)
 
-We illustrate our approach for two-fold cross-validation in Fig below.
+We illustrate our approach for two-fold cross-validation in Fig above and below.
 
 The goal is to use each observation only once for testing, either in
 iteration 1 or in iteration 2 and to never train on customers that are
@@ -205,7 +204,7 @@ appear in the training set are randomly assigned to one of the two
 training folds. The approach generates disjoint subsets of customers for
 training and testing in each iteration:
 
-![](images/paste-C61562F1.png)
+![Alt text](image-12.png)
 
 ## Data Processing and setting up the logic
 
@@ -1705,7 +1704,7 @@ print(boruta)
 plot(boruta,las=2,cex.axis=0.7)
 ```
 
-![](test_markdown_files/figure-gfm/finalizing%20data%20for%20modelling-1.png)<!-- -->
+![Boruta](image-13.png)
 
 ``` r
 boruta$finalDecision
@@ -2597,26 +2596,15 @@ library(caTools)
 # for 1st 
 xx<-predict_final_prob[[1]]$X0
 yy<-outer_list[[1]]$Churn
-as.numeric(yy)
+yy<- as.numeric(yy)
 ```
 
-    ##   [1] 1 1 1 1 1 1 2 2 1 1 2 1 2 1 1 2 1 1 2 2 1 2 2 1 2 1 1 2 1 1 1 2 1 1 1 1 1
-    ##  [38] 2 2 1 1 1 2 1 1 2 1 1 1 1 1 2 2 1 1 2 1 1 2 1 2 1 1 1 1 2 1 2 1 2 1 1 1 1
-    ##  [75] 2 2 2 2 1 1 2 1 2 1 1 1 2 1 1 1 2 1 2 1 1 1 2 1 1 1 1 1 1 1 1 1 2 1 1 1 2
-    ## [112] 2 2 2 2 2 1 2 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 2 1 2 1 1 1 2 1 1 1 1 2 2 1
-    ## [149] 1 1 1 2 1 1 1 2 1 2 1 1 1 1 2 1 2 1 1 1 1 1 1 2 1 1 2 1 1 1 1 1 1 1 2 2 1
-    ## [186] 2 2 2 1 1 2 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 2 1 1 1 2 1 2 1 1 1 1 1
-    ## [223] 1 1 1 1 1 1 1 2 1 1 1 1 1 1 2 1 1 1 2 1 1 1 1 1 1 1 1 1 2 1 1 1 2 1 1 1 1
-    ## [260] 1 1 1 1 1 1 2 1 2 1 1 1 1 2 2 2 1 1 2 2 1 2 1 1 2 1 1 1 1 1 1 1 1 2 1 2 1
-    ## [297] 1 1 1 2 1 1 2 1 1 1 2 1 1 2 1 2 1 1 1 1 1 1 1 2 1 1 2 1 2 1 2 2 1 1 1 1 1
-    ## [334] 1 1 1 1 2 1 1 2 1 1 1 1 1 1 1 2 1 1 2 1 1 1 1 1 1 2 1 1 1 1 1 2 1 1 2 2 1
-    ## [371] 1 1 1 1
 
 ``` r
 colAUC(xx,yy,plotROC = TRUE)
 ```
 
-![](test_markdown_files/figure-gfm/Prediction%20ROC%20and%20confMatrix-1.png)<!-- -->
+![AUC](image-14.png)
 
     ##                [,1]
     ## X0 vs. X1 0.8121212
@@ -2625,26 +2613,14 @@ colAUC(xx,yy,plotROC = TRUE)
 #for 2nd
 xx2<-predict_final_prob[[2]]$X0
 yy2<-outer_list[[2]]$Churn
-as.numeric(yy2)
+yy2<-as.numeric(yy2)
 ```
-
-    ##   [1] 1 2 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 2 2 1 1 1 1 1 1 1 1 1 1 1
-    ##  [38] 1 1 2 2 1 1 1 1 2 1 1 1 1 1 2 1 1 1 2 1 2 2 1 2 1 2 1 1 1 1 1 1 1 1 1 1 2
-    ##  [75] 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 2 2 2 1 1 1 1 1 1 1
-    ## [112] 1 1 2 1 1 2 1 1 2 1 1 1 1 1 1 1 1 1 1 1 2 2 1 1 1 1 1 2 1 1 1 1 1 1 1 2 1
-    ## [149] 2 1 1 1 1 1 1 1 1 1 1 1 2 1 2 1 1 1 1 1 1 2 2 1 2 1 1 1 1 1 2 1 2 2 1 2 1
-    ## [186] 2 2 1 1 1 2 2 1 1 2 2 2 1 2 1 1 1 2 2 2 1 1 1 1 2 2 1 1 1 1 2 1 1 1 2 1 2
-    ## [223] 1 1 1 1 1 1 2 2 1 1 2 1 1 1 2 1 2 2 1 1 2 2 2 1 1 2 1 2 2 2 2 1 1 1 1 1 2
-    ## [260] 1 2 1 1 2 2 1 1 2 1 2 1 1 1 1 2 2 1 1 1 2 2 1 2 2 2 1 2 1 1 1 2 1 1 2 2 1
-    ## [297] 2 1 1 1 1 1 2 2 1 1 2 1 1 1 1 2 2 1 1 2 1 1 2 2 1 2 1 1 2 2 2 2 2 2 2 2 2
-    ## [334] 1 2 2 2 2 1 2 1 1 1 2 1 1 2 1 2 2 2 1 2 1 2 2 2 2 2 2 2 2 1 2 2 1 1 1 2 2
-    ## [371] 2 1 1 2
 
 ``` r
 colAUC(xx2,yy2,plotROC = TRUE)
 ```
 
-![](test_markdown_files/figure-gfm/Prediction%20ROC%20and%20confMatrix-2.png)<!-- -->
+![AUC2](image-15.png)
 
     ##                [,1]
     ## X0 vs. X1 0.8113424
@@ -2777,7 +2753,7 @@ ggplot(data=data.frame(order(final_importance,decreasing=TRUE)),aes(final_import
 
     ## Warning in xtfrm.data.frame(x): cannot xtfrm data frames
 
-![](test_markdown_files/figure-gfm/Overall%20Importance-1.png)<!-- -->
+![gg](image-16.png)
 
 ``` r
 final_importance%>%
@@ -2812,13 +2788,13 @@ final_importance%>%
 plot(varImp(outer_model[[1]]))
 ```
 
-![](test_markdown_files/figure-gfm/Overall%20Importance-2.png)<!-- -->
+![VarImp1](image-17.png)
 
 ``` r
 plot(varImp(outer_model[[2]]))
 ```
 
-![](test_markdown_files/figure-gfm/Overall%20Importance-3.png)<!-- -->
+![VarImp2](image-18.png)
 
 We can average the variable importance score from both model and rank
 them, however I wanted to highlight how the model was able to detect

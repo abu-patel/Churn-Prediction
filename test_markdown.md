@@ -231,7 +231,7 @@ dim(data) #checking dimensions again,
 
 -   Selecting training set from original data set. In the pre processing
     phase, I came up with this 54 variables from scratch and added
-    column (variable) called sheet name, which gives direction to
+    column (variable) called SheetName, which gives direction to
     training and testing selection.
 
 ``` r
@@ -771,7 +771,7 @@ intersect(C2_train$customerID,test_fold2$customerID) # proof of no data leakage
     overlapping customers – second iteration will be over C2_train and
     test fold 2 with no overlapping customers
 
-ultimate goal of doing this was we need to test on **out of period
+- ultimate goal of doing this was we need to test on **out of period
 data** and not out of sample which in other words is very useful for
 time series data. Need to test on most recent time while capturing and
 training over as much data as we can **without any overlapping
@@ -782,7 +782,7 @@ parameters
 
 ## Response Distribution check after processing:
 
-– checking imbalance in both training and both testing data, might help
+- checking imbalance in both training and both testing data, might help
 us to make a judgement in order to which weights to use during our
 modelling.
 
@@ -835,7 +835,7 @@ prop.table(table(test_fold2$Churn)) #proportion of Churn and non Churn in fold2 
 
 \##Modelling and final data preparation
 
--   I tried many models and weighted random forest gave the best result,
+-  I tried many models and weighted random forest gave the best result,
     for this purpose I will be demonstrating only the best model here.
 
 ``` r
@@ -2804,4 +2804,9 @@ plot(varImp(outer_model[[2]]))
 We can average the variable importance score from both model and rank
 them, however I wanted to highlight how the model was able to detect
 similar feature importance for both the models. Clearly Purchase Span
-and Avg Time Difference between orders is the most important features
+and Avg Time Difference between orders is the most important features. 
+
+Lastly the probablity scores were calculated as seen in the above code and communictaed through tableau as see below. Custom strategies were made to prevent customers from churning and sales team were given a single pager pdf to target such customers and keep them happy on a weekly basis.
+
+![Tableau]
+(image-19.png)

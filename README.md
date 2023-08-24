@@ -19,6 +19,7 @@ Finally, by leveraging a recently proposed approach to training data set creatio
 This is really the heart of the project:
 
  ![Single Time Slice Technique](image.png)
+ 
  ![Multiple Time Slice Tecnique](image-2.png)
 
  ## Advantages of Time Slicing 

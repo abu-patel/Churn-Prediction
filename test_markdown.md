@@ -76,7 +76,6 @@ setting.
 
 -----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
-
 ![MultiSlice Methodology](image-10.png)
 
 
@@ -110,7 +109,7 @@ Reading from my excel file: Please note the data is given in the github
 and can be accessed accordingly
 
 ``` r
-f<-"C:\\Users\\patel\\OneDrive\\Desktop\\ValleySolventsChurnDataMultiSlice_feat.xlsx"
+f<-"C:\\Users\\patel\\OneDrive\\Desktop\\Data_MultiSlice_CompanyX.xlsx"
 library(readxl) #package to read from excel
 library(dplyr)  #package for data manipulation 
 ```
